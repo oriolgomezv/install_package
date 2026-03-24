@@ -1,0 +1,6 @@
+- name: Instalación de paquetes
+  hosts: "{{ target_group }}"
+  gather_facts: no
+
+  roles:
+    - install_packages
