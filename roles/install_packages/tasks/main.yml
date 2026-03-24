@@ -7,3 +7,8 @@
   ansible.builtin.package:
     name: "{{ paquete }}"
     state: present
+  register: resultado
+
+- name: Mostrar resultado de la instalación
+  debug:
+    msg: "Paquetes instalados: {{ resultado.results | map(attribute='name') | list }}"
