@@ -1,9 +1,5 @@
-- name: Instalar paquetes
-  hosts: all
+- name: Instalar paquetes indicados
   become: yes
-
-  tasks:
-    - name: Instalar paquetes indicados
-      ansible.builtin.package:
-        name: "{{ paquete }}"
-        state: present
+  ansible.builtin.package:
+    name: "{{ paquete }}"
+    state: present
