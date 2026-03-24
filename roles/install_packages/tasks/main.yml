@@ -9,6 +9,6 @@
     state: present
   register: resultado
 
-- name: Mostrar resultado de la instalación
+- name: Mostrar resultado de instalación
   debug:
-    msg: "Paquetes instalados: {{ resultado.results | map(attribute='name') | list }}"
+    var: resultado
