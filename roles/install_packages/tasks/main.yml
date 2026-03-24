@@ -1,3 +1,7 @@
+- name: Convertir string a lista de paquetes
+  set_fact:
+        paquetes: "{{ paquete.split(',') | map('trim') | list }}"
+
 - name: Instalar paquetes indicados
   become: yes
   ansible.builtin.package:
